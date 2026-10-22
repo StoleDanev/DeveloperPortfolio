@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edno - Stole Danev</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-container">
+    <header>
+        <h1>Edno: Simple Meditation Timer</h1>
+        <p class="subtitle-role">Android Productivity & Mindfulness App</p>
+        <p class="tagline">A clean, distraction-free environment for meditation and mental clarity.</p>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs">
+        <a href="index.html">Home</a>
+        <a href="stepblock.html">StepBlock App</a>
+        <a href="edno.html" class="active">Edno App</a>
+        <a href="CV.html">Full CV</a>
+    </nav>
+
+    <!-- Contact Info Bar (Email & Location only) -->
+    <div class="contact-info">
+        <div><strong>Email:</strong> <a href="mailto:stole.danev.dev@gmail.com">stole.danev.dev@gmail.com</a></div>
+        <div><strong>Location:</strong> Shtip, North Macedonia</div>
+        <div><strong>GitHub:</strong> <a href="https://github.com/StoleDanev" target="_blank">Profile</a></div>
+    </div>
+
+    <div class="main-content">
+        <section>
+            <div class="app-detail-layout">
+                <div class="app-logo-box" style="width: 140px; height: 140px;">
+                    <!-- Insert image path here e.g. src="images/edno-logo.png" -->
+                    <img src="edno-logo.png" alt="Edno Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="app-logo-placeholder" style="display:none;">Edno Logo</div>
+                </div>
+                <div class="app-info-content">
+                    <h2 style="border: none; margin-bottom: 5px;">Edno Overview</h2>
+                    <div class="app-tech" style="margin-bottom: 10px;">Technologies: Java, Android SDK, Minimalist UI</div>
+                    <p style="margin-bottom: 15px;">
+                        Edno is a minimalist Android application built specifically as a meditation timer and focus exercise companion.
+                    </p>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+                        <a href="https://play.google.com/store/apps/details?id=com.elots.edno&pli=1" target="_blank" class="btn">Download on Google Play</a>
+                        <a href="privacy-policy-edno.html" class="btn btn-outline">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Key Features & Implementation</h2>
+            <ul class="bullet-list">
+                <li><strong>Minimalist User Interface:</strong> Designed with a clean, elegant, and distraction-free UI to ensure effortless focus session setups.</li>
+                <li><strong>Resource Optimization:</strong> Engineered for minimal battery drain and stable, reliable performance running in the background.</li>
+                <li><strong>Zero Data Collection:</strong> Operates 100% offline with zero user tracking or data collection. Read the full <a href="privacy-policy-edno.html">Edno Privacy Policy</a>.</li>
+            </ul>
+        </section>
+
+        <!-- App Screenshots Carousel Section (2 per slide) -->
+        <section>
+            <h2>App Screenshots / UI Preview</h2>
+            
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+                
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Slide Group 1 (Screenshots 1 & 2) -->
+                    <div class="carousel-group">
+                        <div class="carousel-slide">
+                            <img src="edno-screenshot1.png" alt="Screenshot 1" onerror="this.style.display='none';">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="edno-screenshot2.png" alt="Screenshot 2" onerror="this.style.display='none';">
+                        </div>
+                    </div>
+                    
+                    <!-- Slide Group 2 (Screenshots 3 & 4) -->
+                    <div class="carousel-group">
+                        <div class="carousel-slide">
+                            <img src="edno-screenshot3.png" alt="Screenshot 3" onerror="this.style.display='none';">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="edno-screenshot4.png" alt="Screenshot 4" onerror="this.style.display='none';">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Indicator Dots (2 dots for 2 slides/groups) -->
+            <div class="carousel-dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Stole Danev. All rights reserved.</p>
+    </footer>
+</div>
+
+<!-- Carousel Script -->
+<script>
+    let currentSlide = 0;
+    const totalSlides = 2; // 2 groups of screenshots
+    const track = document.getElementById('carouselTrack');
+    const dots = document.querySelectorAll('.dot');
+
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    function moveSlide(direction) {
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+    }
+</script>
+
+</body>
+</html>

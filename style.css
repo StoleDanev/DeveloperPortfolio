@@ -1,0 +1,534 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Global Link Rules (Soft Ice Blue Off-Color) */
+a, a:link, a:visited {
+    color: #7dd3fc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #F5F5DC;
+    text-decoration: underline;
+}
+
+.page-container {
+    max-width: 950px;
+    margin: 20px auto;
+    background: #1e1e1e;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+/* Header & Hero Section */
+header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1e1e 100%);
+    color: #ffffff;
+    padding: 40px 40px 30px 40px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+    color: #F5F5DC;
+}
+
+header p.subtitle-role {
+    font-size: 18px;
+    color: #7dd3fc;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+header p.tagline {
+    font-size: 15px;
+    color: #b0b0b0;
+    max-width: 650px;
+    margin: 0 auto 20px auto;
+}
+
+/* Navigation Tabs Bar */
+nav.nav-tabs {
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #333;
+}
+
+nav.nav-tabs a,
+nav.nav-tabs a:link,
+nav.nav-tabs a:visited {
+    color: #a0a0a0;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav.nav-tabs a:hover {
+    color: #F5F5DC;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+nav.nav-tabs a.active,
+nav.nav-tabs a.active:visited {
+    color: #F5F5DC;
+    border-bottom-color: #F5F5DC;
+    background-color: rgba(245, 245, 220, 0.05);
+}
+
+/* Contact Bar */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    background-color: #141414;
+    padding: 12px 40px;
+    font-size: 14px;
+    color: #cccccc;
+    border-bottom: 1px solid #333;
+}
+
+.contact-info div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-info a,
+.contact-info a:link,
+.contact-info a:visited {
+    color: #7dd3fc;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #F5F5DC;
+}
+
+/* Main Content Layout */
+.main-content {
+    padding: 40px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 22px;
+    color: #F5F5DC;
+    border-bottom: 2px solid #333;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+p {
+    color: #d0d0d0;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+    background-color: #F5F5DC;
+    color: #121212;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.2s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #e5e5cc;
+    color: #121212;
+    text-decoration: none;
+}
+
+.btn-outline,
+.btn-outline:link,
+.btn-outline:visited {
+    background-color: transparent;
+    color: #7dd3fc;
+    border: 2px solid #38bdf8;
+}
+
+.btn-outline:hover {
+    border-color: #F5F5DC;
+    background-color: rgba(245, 245, 220, 0.05);
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+/* App Preview & Detail Layout */
+.app-detail-layout {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.app-logo-box {
+    width: 120px;
+    height: 120px;
+    background: #252525;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.app-logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.app-logo-placeholder {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+    padding: 10px;
+    font-weight: 600;
+}
+
+/* App Cards Grid */
+.apps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.app-card {
+    background: #252525;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.app-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+    border-color: #444;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.app-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.app-title a,
+.app-title a:link,
+.app-title a:visited {
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+.app-title a:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+.app-badge {
+    background-color: rgba(245, 245, 220, 0.1);
+    color: #F5F5DC;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 12px;
+    border: 1px solid #444;
+}
+
+.app-tech {
+    font-size: 14px;
+    font-style: italic;
+    color: #b0b0b0;
+    margin-bottom: 12px;
+}
+
+/* Content List Styles */
+ul.bullet-list {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+ul.bullet-list li {
+    margin-bottom: 8px;
+    color: #d0d0d0;
+    font-size: 15px;
+}
+
+/* CV Entry Item Styling */
+.entry {
+    margin-bottom: 25px;
+}
+
+.entry:last-child {
+    margin-bottom: 0;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+}
+
+.entry-title {
+    font-weight: bold;
+    font-size: 17px;
+    color: #F5F5DC;
+}
+
+.entry-title a,
+.entry-title a:link,
+.entry-title a:visited {
+    color: #F5F5DC;
+    text-decoration: none;
+}
+
+.entry-title a:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+.entry-date {
+    font-size: 14px;
+    color: #888;
+    font-weight: 500;
+}
+
+.entry-subtitle {
+    font-style: italic;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+/* Skills Badges */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.skills-list li {
+    background-color: #252525;
+    color: #e0e0e0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #333;
+}
+
+/* CTA Card / Highlights */
+.cta-card {
+    background: #252525;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.cta-card h2 {
+    border: none;
+    margin-bottom: 10px;
+}
+
+.cta-card p {
+    color: #b0b0b0;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #141414;
+    color: #888;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    border-top: 1px solid #333;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 650px) {
+    header, .main-content {
+        padding: 20px;
+    }
+    .contact-info {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .app-detail-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .app-logo-box {
+        margin: 0 auto;
+    }
+}
+
+/* Carousel Component Styles (2 items per view) */
+        .carousel-container {
+            position: relative;
+            max-width: 650px; /* Wider to accommodate 2 screenshots side by side */
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            border: 1px solid #333;
+            background: #1e1e1e;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.4s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-group {
+            min-width: 100%;
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            box-sizing: border-box;
+            justify-content: center;
+        }
+
+        .carousel-slide {
+            flex: 1;
+            height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #252525;
+            color: #888;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #333;
+            user-select: none;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        /* Navigation Buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: background 0.2s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .carousel-btn.prev { left: 10px; }
+        .carousel-btn.next { right: 10px; }
+
+        /* Indicator Dots (2 slides total now since each holds 2 screenshots) */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #444;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .dot.active {
+            background: #007acc;
+        }
+
+        /* Responsive adjustment for small phones */
+        @media (max-width: 500px) {
+            .carousel-group {
+                flex-direction: column;
+            }
+            .carousel-slide {
+                height: 350px;
+            }
+        }
